@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <h1>Examen Parcial 1</h1>
+        <div>
+            <div>
+              <center>
+                <div class="img">
+                    <div style="width: 30%;">
+                        <div><h2>Diagrama ER</h2></div>
+                        <div><img src="ER.png" class="img2"></div>
+                    </div>
+                    <div style="width: 60%;">
+                        <div><h2>Diagrama Racional</h2></div>
+                        <div><img src="Relacional.png" class="conceptual"></div>
+                    </div>
+                </div></center>
+                <div>
+                    <div class="consultaTI"><center><h3>T A B L A S</h3></center></div><br>
+                    <center>
+                        <div style="width: 30%, height: auto;">
+                            <div><h2>Clientes</h2></div>
+                            <div><img src="cliente.png" ></div>
+                        </div>
+                        <div style="width: 30%, height: auto;">
+                            
+                            <div><h2>Mascotas</h2></div>
+                            <div><img src="mascota.png" ></div>
+                        </div>
+                        <div style="width: 30%, height: auto;">
+                            <div><h2>Servicios</h2></div>
+                            <div><img src="Servicio.png"></div>
+                        </div>
+                    </center>
+                    
+                    <div class="consultati">  <center><h3>C O N S U L T A S</h3></center> </div><br>
+                    <div class="consulta">CREATE TABLE bibliotec.Cliente (idCliente INT(10) NOT NULL, nombre VARCHAR(255) NOT NULL, telefono VARCHAR(15) NOT NULL, PRIMARY KEY (idCliente)) ENGINE = InnoDB;
+                        , Comision VARCHAR(5) NOT NULL , Telefono INT(10) NOT NULL , PRIMARY KEY (Id)) ENGINE = InnoDB;</div>
+                    <div class="consulta">CREATE TABLE bibliotec.Mascota (idMascota INT(10) NOT NULL, nombre VARCHAR(255) NOT NULL, especie VARCHAR(50) NOT NULL, idCliente INT(10) NOT NULL, PRIMARY KEY (idMascota), FOREIGN KEY (idCliente) REFERENCES bibliotec.Cliente(idCliente)) ENGINE = InnoDB;
+                    </div>
+                    <div class="consulta">CREATE TABLE bibliotec.Servicio (idServicio INT(10) NOT NULL, tipoServicio VARCHAR(255) NOT NULL, costo DECIMAL(10, 2) NOT NULL, PRIMARY KEY (idServicio)) ENGINE = InnoDB;
+                    </div>
+                    <div class="consulta">
+                        CREATE TABLE bibliotec.Cita (idCita INT(10) NOT NULL, fecha DATE NOT NULL, idCliente INT(10) NOT NULL, idMascota INT(10) NOT NULL, idServicio INT(10) NOT NULL, idMedico INT(10) NOT NULL, PRIMARY KEY (idCita), FOREIGN KEY (idCliente) REFERENCES bibliotec.Cliente(idCliente), FOREIGN KEY (idMascota) REFERENCES bibliotec.Mascota(idMascota), FOREIGN KEY (idServicio) REFERENCES bibliotec.Servicio(idServicio), FOREIGN KEY (idMedico) REFERENCES bibliotec.MedicoVeterinario(idMedico)) ENGINE = InnoDB;
+                    </div>
+                    <div class="consulta">
+                        CREATE TABLE bibliotec.MedicoVeterinario (idMedico INT(10) NOT NULL, nombre VARCHAR(255) NOT NULL, especialidad VARCHAR(255) NOT NULL, PRIMARY KEY (idMedico)) ENGINE = InnoDB;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
